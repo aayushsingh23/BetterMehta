@@ -13,6 +13,11 @@
      flex: 0 0 auto;        /* Ensure each canvas is displayed in a row */
     width: auto !important; /* Maintain the natural width of each page */
     height: 100% !important; /* Fit the pages to the container height */
+  
+  }
+  .bw-filter{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
   }
   
   .customization {
@@ -29,6 +34,17 @@
     font-weight:bold;
     
   }
+  .sticky-bottom-card {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: white; /* Optional for background */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    z-index: 1000;
+}
+
 
   @media (max-width: 576px) {
     .document-preview-container {
@@ -59,9 +75,18 @@
     .customization {
       align-items: center; 
    }
-    
    
-  } 
+  .mobile-opt{
+   
+        font-size: 0.8rem;  /* Smaller font size */
+        padding: 0.25rem 0.5rem; /* Smaller padding */
+        text-align: center;
+        justify-content: center;
+      }
+    
+  }
+   
+  
   /* .document-preview-container {
     display: flex;
    flex-direction: column;

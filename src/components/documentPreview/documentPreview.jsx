@@ -41,7 +41,7 @@ function DocumentPreview({ document }) {
   return (
     <div className="document-preview-container row   ">
       
-      <div className="pdf-viewer-wrapper col-5 ">
+      <div className={colorMode=='color'?'pdf-viewer-wrapper col-5':'pdf-viewer-wrapper col-5 bw-filter'}>
       <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}>
         <Viewer fileUrl={document} 
          />
@@ -49,11 +49,11 @@ function DocumentPreview({ document }) {
       </div>
 
       
-      <div className="customization col-7 justify-content-center align-self-center ">
+      <div className="customization col-7 justify-content-center align-self-center mobile-opt ">
         
       <Form.Group>
       <Form.Label>Number of Copies</Form.Label>
-      <div className="d-flex">
+      <div className='d-flex mobile-opt'>
            <Button
               variant="outline-dark"
               onClick={() => setNumCopies(numCopies > 1 ? numCopies - 1 : 1)}
@@ -74,36 +74,37 @@ function DocumentPreview({ document }) {
 
       <Form.Group className="mt-3">
           <Form.Label>Choose Print Color</Form.Label>
-          <div className="d-flex">
+          <div className="d-flex mobile-opt">
               <Button
                   variant={colorMode === 'color' ? 'dark' : 'outline-dark'}
-                  className="me-2"
+                  className="me-2 mobile-opt"
                   onClick={() => setColorMode('color')}
               >
-                  Color ₹5/page
+                  Color 
               </Button>
               <Button
+                  className="mobile-opt"
                   variant={colorMode === 'bw' ? 'dark' : 'outline-dark'}
                   onClick={() => setColorMode('bw')}
               >
-                  B & W ₹2/page
+                  B & W 
               </Button>
           </div>
       </Form.Group>
 
       <Form.Group className="mt-3">
           <Form.Label>Choose Print Orientation</Form.Label>
-          <div className="d-flex">
-              <Button variant="outline-dark" className="me-2">
+          <div className="d-flex mobile-opt">
+              <Button variant="outline-dark mobile-opt" className="me-2">
                   Portrait
               </Button>
-              <Button variant="outline-dark">Landscape</Button>
+              <Button variant="outline-dark mobile-opt">Landscape</Button>
           </div>
       </Form.Group>
-      <Card className="mt-3">
+      <Card className="sticky-bottom-card">
       <div className="d-flex justify-content-between align-items-center mx-2 my-2">
                             <p className="mb-0"><strong>Total: ₹{totalPrice}</strong></p>
-                            <Button variant="success">Proceed to Payment</Button>
+                            <Button variant="success"  >Proceed to Payment</Button>
                         </div>
       </Card>
       
