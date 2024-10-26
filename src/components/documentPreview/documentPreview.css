@@ -1,0 +1,80 @@
+ .document-preview-container {
+  height: 100%;
+  
+} 
+.pdf-viewer-wrapper {
+   display: flex; 
+   height:540px;     /* Adjust height as necessary */
+  border: 1px solid #ddd; /* Optional: border for clarity */
+  padding: 10px;
+}
+  
+  .pdf-viewer-wrapper canvas {
+     flex: 0 0 auto;        /* Ensure each canvas is displayed in a row */
+    width: auto !important; /* Maintain the natural width of each page */
+    height: 100% !important; /* Fit the pages to the container height */
+  }
+  
+  .customization {
+    margin-top: 10px;
+    
+
+    gap: 10px;
+     align-items: center; 
+  
+  }
+  
+  .customization label {
+    margin-right: 10px;
+    font-weight:bold;
+    
+  }
+
+  @media (max-width: 576px) {
+    .document-preview-container {
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .pdf-viewer-wrapper {
+      width: 300px;       /* Make the viewer responsive */
+      height: 400px;     /* Fixed height for the preview section */
+      align-items:center;
+      
+      border: 1px solid #ddd; /* Optional: a border to better define the area */
+      padding: 10px;
+      
+    }
+    
+    .pdf-viewer-container canvas {
+      /* flex: 0 0 auto; Ensure the PDF canvas fills the available width */
+      width: auto !important; /* Maintain the natural width of each page */
+      height: 100% !important; /* Fit the pages to the container height */
+    }
+    
+    .customization {
+      align-items: center; 
+   }
+    
+   
+  } 
+  /* .document-preview-container {
+    display: flex;
+   flex-direction: column;
+   align-items: center; 
+   width: 100%;
+   height: 50%;
+  margin: 0 auto; 
+ }
+ .pdf-viewer-wrapper{
+   width: 100%;            /*Set container width to full 
+   height: 400px; 
+  
+ }
+ .customization {
+    align-items: center; 
+ } */
